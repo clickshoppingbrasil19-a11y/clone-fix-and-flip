@@ -23,13 +23,13 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
   const colorVariants: ColorVariant[] = [
     { key: "beige", img: productBeige, name: "Bege" },
     { key: "black", img: productBlack, name: "Preto" },
-    { key: "purple", img: productBlue, name: "Roxo" },  // ✅ Ajustado
+    { key: "purple", img: productBlue, name: "Roxo" },  
     { key: "brown", img: productBrown, name: "Marrom" },
   ];
 
   const handleCheckout = () => {
     if (selectedColor) {
-      window.location.href = `https://checkout.shoppingdochina.com.br/VCCL1O8SCG8Q?color=${selectedColor}`;
+      window.location.href = "https://checkout.shoppingdochina.com.br/VCCL1O8SCG8Q";
     }
   };
 
