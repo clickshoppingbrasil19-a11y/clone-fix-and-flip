@@ -3,6 +3,11 @@ import review1 from "@/assets/review1.jpg";
 import review2 from "@/assets/review2.jpg";
 import review3 from "@/assets/review3.jpg";
 
+// ✅ Imagens extras
+import img1 from "@/assets/imagem-1.jpg";
+import img2 from "@/assets/imagem-2.jpg";
+import img3 from "@/assets/imagem-3.jpg";
+
 interface Review {
   name: string;
   time: string;
@@ -39,6 +44,9 @@ export const ReviewSection = () => {
     },
   ];
 
+  // ✅ Lista das imagens extras
+  const photos = [img1, img2, img3];
+
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
       <div className="flex items-center justify-between mb-4">
@@ -69,12 +77,27 @@ export const ReviewSection = () => {
                 <p className="text-xs text-success">{review.time}</p>
               </div>
             </div>
+
             <div className="flex mb-2">
               {[...Array(review.rating)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-warning text-warning" />
               ))}
             </div>
-            <p className="text-sm text-gray-700">{review.comment}</p>
+
+            <p className="text-sm text-gray-700 mb-3">{review.comment}</p>
+
+            {/* ✅ Fotos extras abaixo */}
+            <div className="flex gap-2">
+              {photos.map((photo, i) => (
+                <img
+                  key={i}
+                  src={photo}
+                  alt={`Foto ${i + 1}`}
+                  className="w-20 h-20 rounded-md object-cover"
+                />
+              ))}
+            </div>
+
           </div>
         ))}
       </div>
