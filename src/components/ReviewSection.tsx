@@ -3,7 +3,7 @@ import review1 from "@/assets/review1.jpg";
 import review2 from "@/assets/review2.jpg";
 import review3 from "@/assets/review3.jpg";
 
-// ✅ Imagens extras
+// ✅ Imagens extras — 1 por review
 import img1 from "@/assets/imagem-1.jpg";
 import img2 from "@/assets/imagem-2.jpg";
 import img3 from "@/assets/imagem-3.jpg";
@@ -14,6 +14,7 @@ interface Review {
   rating: number;
   comment: string;
   avatar: string;
+  photo: string;
 }
 
 export const ReviewSection = () => {
@@ -25,6 +26,7 @@ export const ReviewSection = () => {
       comment:
         "Excelente conjunto de panelas! A qualidade é impressionante e a cerâmica antiaderente realmente funciona. Minhas refeições não grudam mais e a limpeza ficou muito mais fácil.",
       avatar: review1,
+      photo: img1,
     },
     {
       name: "Carla Albuquerque",
@@ -33,6 +35,7 @@ export const ReviewSection = () => {
       comment:
         "Comprei e adorei! As panelas são bonitas, práticas e aquecem de forma uniforme. O conjunto completo atende todas as necessidades da cozinha.",
       avatar: review2,
+      photo: img2,
     },
     {
       name: "Marina Santos",
@@ -41,11 +44,9 @@ export const ReviewSection = () => {
       comment:
         "Melhor investimento que fiz para minha cozinha! As panelas são lindas, duráveis e muito fáceis de limpar. O revestimento antiaderente é de excelente qualidade.",
       avatar: review3,
+      photo: img3,
     },
   ];
-
-  // ✅ Lista das imagens extras
-  const photos = [img1, img2, img3];
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -66,6 +67,7 @@ export const ReviewSection = () => {
       <div className="space-y-4">
         {reviews.map((review, index) => (
           <div key={index} className="bg-gray-50 p-4 rounded-lg">
+            
             <div className="flex items-start gap-3 mb-2">
               <img 
                 src={review.avatar} 
@@ -86,17 +88,12 @@ export const ReviewSection = () => {
 
             <p className="text-sm text-gray-700 mb-3">{review.comment}</p>
 
-            {/* ✅ Fotos extras abaixo */}
-            <div className="flex gap-2">
-              {photos.map((photo, i) => (
-                <img
-                  key={i}
-                  src={photo}
-                  alt={`Foto ${i + 1}`}
-                  className="w-20 h-20 rounded-md object-cover"
-                />
-              ))}
-            </div>
+            {/* ✅ Apenas 1 imagem correspondente ao review */}
+            <img
+              src={review.photo}
+              alt={`Foto avaliação ${index + 1}`}
+              className="w-24 h-24 rounded-md object-cover"
+            />
 
           </div>
         ))}
