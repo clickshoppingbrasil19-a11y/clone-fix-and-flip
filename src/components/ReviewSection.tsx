@@ -1,4 +1,7 @@
 import { Star } from "lucide-react";
+import review1 from "@/assets/review1.jpg";
+import review2 from "@/assets/review2.jpg";
+import review3 from "@/assets/review3.jpg";
 
 interface Review {
   name: string;
@@ -11,20 +14,20 @@ interface Review {
 export const ReviewSection = () => {
   const reviews: Review[] = [
     {
-      name: "Luh Moraes",
+      name: "Juliana Moraes",
       time: "há 23 minutos",
       rating: 5,
       comment:
         "Excelente conjunto de panelas! A qualidade é impressionante e a cerâmica antiaderente realmente funciona. Minhas refeições não grudam mais e a limpeza ficou muito mais fácil.",
-      avatar: "🙋‍♀️",
+      avatar: review1,
     },
     {
-      name: "Carlos Albuquerque",
+      name: "Carla Albuquerque",
       time: "há 41 minutos",
       rating: 5,
       comment:
-        "Comprei para presentear minha esposa e ela adorou! As panelas são bonitas, práticas e aquecem de forma uniforme. O conjunto completo atende todas as necessidades da cozinha.",
-      avatar: "👨",
+        "Comprei e adorei! As panelas são bonitas, práticas e aquecem de forma uniforme. O conjunto completo atende todas as necessidades da cozinha.",
+      avatar: review2,
     },
     {
       name: "Marina Santos",
@@ -32,7 +35,7 @@ export const ReviewSection = () => {
       rating: 5,
       comment:
         "Melhor investimento que fiz para minha cozinha! As panelas são lindas, duráveis e muito fáceis de limpar. O revestimento antiaderente é de excelente qualidade.",
-      avatar: "👩",
+      avatar: review3,
     },
   ];
 
@@ -56,9 +59,11 @@ export const ReviewSection = () => {
         {reviews.map((review, index) => (
           <div key={index} className="bg-gray-50 p-4 rounded-lg">
             <div className="flex items-start gap-3 mb-2">
-              <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-xl">
-                {review.avatar}
-              </div>
+              <img 
+                src={review.avatar} 
+                alt={review.name}
+                className="w-10 h-10 rounded-full object-cover"
+              />
               <div>
                 <p className="font-medium text-gray-800">{review.name}</p>
                 <p className="text-xs text-success">{review.time}</p>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Header } from "@/components/Header";
 import { ProductCarousel } from "@/components/ProductCarousel";
 import { PriceSection } from "@/components/PriceSection";
 import { ShippingInfo } from "@/components/ShippingInfo";
@@ -8,7 +9,6 @@ import { ReviewSection } from "@/components/ReviewSection";
 import { ProductDescription } from "@/components/ProductDescription";
 import { ColorSelectionModal } from "@/components/ColorSelectionModal";
 import { FixedFooter } from "@/components/FixedFooter";
-import bannerTop from "@/assets/banner-top.jpg";
 import productMain from "@/assets/product-main.jpg";
 import productBeige from "@/assets/product-beige.jpg";
 import productBlack from "@/assets/product-black.jpg";
@@ -28,10 +28,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Top Banner */}
-      <div className="w-full">
-        <img src={bannerTop} alt="Banner TikTok Shop" className="w-full" />
-      </div>
+      {/* Header */}
+      <Header />
 
       {/* Product Carousel */}
       <ProductCarousel images={productImages} />
