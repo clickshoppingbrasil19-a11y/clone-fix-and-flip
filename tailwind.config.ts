@@ -47,6 +47,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        tiktok: {
+          DEFAULT: "hsl(var(--tiktok-primary))",
+          gradient: {
+            start: "hsl(var(--tiktok-gradient-start))",
+            end: "hsl(var(--tiktok-gradient-end))",
+          },
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        "pink-light": "hsl(var(--pink-light))",
+        "pink-accent": "hsl(var(--pink-accent))",
+        "yellow-light": "hsl(var(--yellow-light))",
+        "amber-dark": "hsl(var(--amber-dark))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -37,6 +37,17 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    
+    /* TikTok Shop Colors */
+    --tiktok-primary: 348 100% 50%;
+    --tiktok-gradient-start: 24 95% 53%;
+    --tiktok-gradient-end: 24 100% 48%;
+    --success: 142 71% 45%;
+    --warning: 48 100% 50%;
+    --pink-light: 340 82% 95%;
+    --pink-accent: 340 82% 52%;
+    --yellow-light: 48 100% 96%;
+    --amber-dark: 30 80% 30%;
 
     --sidebar-background: 0 0% 98%;
 
