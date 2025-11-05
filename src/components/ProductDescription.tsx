@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
+import banner1 from "@/assets/banner-description-1.jpg";
+import banner2 from "@/assets/banner-description-2.jpg";
+import tiktokLogo from "@/assets/tiktok-logo.png";
 
 export const ProductDescription = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -92,6 +95,29 @@ export const ProductDescription = () => {
           </p>
         </div>
       </article>
+
+      {/* Product Banners */}
+      <div className="w-full space-y-4">
+        <img 
+          src={banner1} 
+          alt="Revestimento de granito - Tecnologia Alemã - Economia de Energia" 
+          className="w-full"
+        />
+        <img 
+          src={banner2} 
+          alt="Qualidade Nobre - 1 ANO de Garantia - Medidas das Panelas" 
+          className="w-full"
+        />
+      </div>
+
+      {/* TikTok Shop Logo */}
+      <div className="flex justify-center py-8">
+        <img 
+          src={tiktokLogo} 
+          alt="TikTok Shop" 
+          className="h-12 object-contain"
+        />
+      </div>
     </section>
   );
 };
