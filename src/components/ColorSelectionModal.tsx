@@ -23,7 +23,7 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
   const colorVariants: ColorVariant[] = [
     { key: "beige", img: productBeige, name: "Bege" },
     { key: "black", img: productBlack, name: "Preto" },
-    { key: "blue", img: productBlue, name: "Azul" },
+    { key: "Purple", img: productBlue, name: "Roxo" },
     { key: "brown", img: productBrown, name: "Marrom" },
   ];
 
