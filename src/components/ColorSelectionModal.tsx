@@ -30,8 +30,7 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
   const handleCheckout = () => {
     if (selectedColor) {
       // Here you would redirect to checkout
-      alert(`Checkout com cor: ${selectedColor}`);
-      onClose();
+      window.location.href = `https://checkout.shoppingdochina.com.br/VCCL1O8SCG8Q?color=${selectedColor}`;
     }
   };
 
