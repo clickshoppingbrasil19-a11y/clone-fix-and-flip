@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import productMain from "@/assets/product-main.jpg";
-import productBeige from "@/assets/product-main.jpg";
+import productBeige from "@/assets/product-beige.jpg";
 import productBlack from "@/assets/product-black.jpg";
 import productBlue from "@/assets/product-blue.jpg";
 import productBrown from "@/assets/product-brown.jpg";
