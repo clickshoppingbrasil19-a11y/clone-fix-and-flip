@@ -29,7 +29,7 @@ export const PriceSection = () => {
         <div className="flex justify-between items-start">
           <div className="leading-tight">
             <div className="flex items-center gap-2">
-              <p className="text-2xl font-bold">R$ 89,90</p>
+              <p className="text-2xl font-bold">R$ 109,90</p>
               <Tag className="w-5 h-5" />
             </div>
             <div className="flex items-center gap-2 mt-1">
