@@ -86,7 +86,7 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
               <img
                 src={variant.img}
                 alt={variant.name}
-                className="w-full h-16 object-cover rounded mb-1"
+                className="w-full h-16 object-contain rounded mb-1"
               />
               <p className="text-xs font-medium text-gray-800 text-center">{variant.name}</p>
             </button>
