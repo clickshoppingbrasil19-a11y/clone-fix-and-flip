@@ -9,6 +9,7 @@ import { ReviewSection } from "@/components/ReviewSection";
 import { ProductDescription } from "@/components/ProductDescription";
 import { ColorSelectionModal } from "@/components/ColorSelectionModal";
 import { FixedFooter } from "@/components/FixedFooter";
+import { StoreInfo } from "@/components/StoreInfo";
 import productMain from "@/assets/product-main.jpg";
 import productBeige from "@/assets/product-beige.jpg";
 import productBlack from "@/assets/product-black.jpg";
@@ -53,6 +54,9 @@ const Index = () => {
       <div className="p-4">
         <ReviewSection />
       </div>
+
+      {/* Store Info */}
+      <StoreInfo />
 
       {/* Product Description */}
       <ProductDescription />
