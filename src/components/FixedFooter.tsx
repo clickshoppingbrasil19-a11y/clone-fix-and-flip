@@ -35,7 +35,7 @@ export const FixedFooter = ({ onBuyClick }: FixedFooterProps) => {
         </button>
 
         <button
-          onClick={() => window.location.href = "https://checkout.shoppingdochina.com.br/VCCL1O8SCG8Q"}
+          onClick={onBuyClick}
           className="inline-flex items-center justify-center h-12 px-4 py-3 rounded-lg bg-tiktok hover:bg-[#e60049] text-white text-sm font-semibold uppercase tracking-wide shadow-md active:scale-[.98] whitespace-nowrap transition-all duration-200 flex-[1.8]"
         >
           <span className="text-sm leading-none text-center">Comprar</span>
