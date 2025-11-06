@@ -50,11 +50,6 @@ export const ProductCarousel = ({ images }: ProductCarouselProps) => {
           <ChevronRight className="w-6 h-6" />
         </button>
 
-        {/* Counter */}
-        <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
-          {currentIndex + 1}/{images.length}
-        </div>
-
         {/* Pagination dots */}
         <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1">
           {images.map((_, index) => (

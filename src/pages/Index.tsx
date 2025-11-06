@@ -20,7 +20,6 @@ const Index = () => {
 
   const productImages = [
     productMain,
-    productBeige,
     productBlack,
     productBlue,
     productBrown,
