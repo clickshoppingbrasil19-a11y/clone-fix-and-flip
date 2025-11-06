@@ -77,7 +77,7 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
             <button
               key={variant.key}
               onClick={() => setSelectedColor(variant.key)}
-              className={`p-3 border-2 rounded-lg transition ${
+              className={`p-2 border-2 rounded-lg transition ${
                 selectedColor === variant.key
                   ? "border-tiktok bg-pink-light"
                   : "border-gray-200 hover:border-gray-300"
@@ -86,9 +86,9 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
               <img
                 src={variant.img}
                 alt={variant.name}
-                className="w-full h-24 object-cover rounded mb-2"
+                className="w-full h-16 object-cover rounded mb-1"
               />
-              <p className="text-sm font-medium text-gray-800 text-center">{variant.name}</p>
+              <p className="text-xs font-medium text-gray-800 text-center">{variant.name}</p>
             </button>
           ))}
         </div>
