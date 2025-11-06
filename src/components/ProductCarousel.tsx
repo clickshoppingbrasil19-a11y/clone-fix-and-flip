@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProductCarouselProps {
@@ -15,6 +15,15 @@ export const ProductCarousel = ({ images }: ProductCarouselProps) => {
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
+
+  // Autoplay
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 3000); // Muda a cada 3 segundos
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
     <div className="relative w-full max-w-5xl mx-auto">
