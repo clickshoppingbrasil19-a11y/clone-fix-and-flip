@@ -27,8 +27,43 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
     { key: "brown", img: productBrown, name: "Marrom" },
   ];
 
+  const handleColorSelect = (key: string) => {
+    setSelectedColor(key);
+
+    // ✅ Dispara AddToCart ao escolher a cor
+    if (window.ttq) {
+      window.ttq.track('AddToCart', {
+        contents: [
+          {
+            content_id: 'life-smile-29px',
+            content_type: 'product',
+            quantity: 1
+          }
+        ],
+        value: 109.90,
+        currency: 'BRL'
+      });
+    }
+  };
+
   const handleCheckout = () => {
     if (selectedColor) {
+      // ✅ Inicia o checkout com parâmetros obrigatórios
+      if (window.ttq) {
+        window.ttq.track('InitiateCheckout', {
+          contents: [
+            {
+              content_id: 'life-smile-29px',
+              content_type: 'product',
+              quantity: 1
+            }
+          ],
+          value: 109.90,
+          currency: 'BRL'
+        });
+      }
+
+      // ✅ Redireciona para o Vega Checkout
       window.location.href = "https://checkout.shoppingdochina.com.br/VCCL1O8SCG8Q";
     }
   };
@@ -50,7 +85,6 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
           <X className="w-6 h-6" />
         </button>
 
-        {/* Product image and price */}
         <div className="flex items-center mb-6">
           <img
             src={productMain}
@@ -68,15 +102,13 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
           </div>
         </div>
 
-        {/* Color label */}
         <h2 className="text-gray-600 font-semibold mb-3">Cor</h2>
 
-        {/* Color options */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {colorVariants.map((variant) => (
             <button
               key={variant.key}
-              onClick={() => setSelectedColor(variant.key)}
+              onClick={() => handleColorSelect(variant.key)}
               className={`p-2 border-2 rounded-lg transition ${
                 selectedColor === variant.key
                   ? "border-tiktok bg-pink-light"
@@ -93,7 +125,6 @@ export const ColorSelectionModal = ({ isOpen, onClose }: ColorSelectionModalProp
           ))}
         </div>
 
-        {/* Checkout button */}
         <button
           onClick={handleCheckout}
           disabled={!selectedColor}
