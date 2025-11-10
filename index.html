@@ -1,60 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- TikTok Pixel Code Start -->
-    <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)}
-      
-      // ✅ Carrega pixel
-      ttq.load('D4937IBC77U3KF9L8BNG');
-      ttq.page();
-
-      // ✅ Evento obrigatório: ViewContent
-      ttq.track('ViewContent', {
-        content_id: 'panela-lifesmile-29pcs',
-        content_type: 'product',
-        content_name: 'Conjunto de Panelas Life Smile 29 Peças',
-        value: 497.00,
-        currency: 'BRL'
-      });
-
-      // ✅ Evento de adicionar ao carrinho
-      ttq.track('AddToCart', {
-        content_id: 'panela-lifesmile-29pcs',
-        content_type: 'product',
-        content_name: 'Conjunto de Panelas Life Smile 29 Peças',
-        value: 497.00,
-        currency: 'BRL'
-      });
-
-      // ✅ Iniciou checkout
-      ttq.track('InitiateCheckout', {
-        content_id: 'panela-lifesmile-29pcs',
-        content_type: 'product',
-        content_name: 'Conjunto de Panelas Life Smile 29 Peças',
-        value: 497.00,
-        currency: 'BRL'
-      });
-
-      // ✅ Evento de compra concluída (ex: no checkout obrigado)
-      // Se tiver uma página de obrigado, cole esse evento nela
-      ttq.track('Purchase', {
-        content_id: 'panela-lifesmile-29pcs',
-        content_type: 'product',
-        content_name: 'Conjunto de Panelas Life Smile 29 Peças',
-        value: 497.00,
-        currency: 'BRL'
-      });
-
-    }(window, document, 'ttq');
-    </script>
-    <!-- TikTok Pixel Code End -->
 
     <title>Conjunto de Panelas LIFE SMILE 29 Peças | TikTok Shop</title>
     <meta name="description" content="Conjunto de Panelas LIFE SMILE 29 Peças Granito Antiaderente - Oferta Pré Black Friday com 81% de desconto. Frete Grátis!" />
@@ -68,6 +16,41 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- ✅ TikTok Pixel Oficial -->
+    <script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+        ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D4937IBC77U3KF9L8BNG');
+        ttq.page();
+
+        /* ✅ ViewContent com content_id obrigatório (VSA) */
+        ttq.track('ViewContent', {
+          contents: [
+            {
+              content_id: "panelas-29pcs", // ID do produto
+              content_type: "product",
+              content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
+            }
+          ],
+          value: 109.90,
+          currency: "BRL"
+        });
+    </script>
+    <!-- ✅ Fim do Pixel Oficial -->
+
+    <!-- ✅ TikTok Pixel via UTMIFY -->
+    <script>
+      window.tikTokPixelId = "D4937IBC77U3KF9L8BNG";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+      document.head.appendChild(a);
+    </script>
+
   </head>
 
   <body>
