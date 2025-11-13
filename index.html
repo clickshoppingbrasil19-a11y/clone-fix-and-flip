@@ -17,7 +17,7 @@
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- ✅ TikTok Pixel com InitiateCheckout -->
+    <!-- ✅ TikTok Pixel com content_id e InitiateCheckout -->
     <script>
       !function (w, d, t) {
         w.TiktokAnalyticsObject = t;
@@ -52,42 +52,43 @@
         ttq.load('D4937IBC77U3KF9L8BNG');
         ttq.page();
 
-        // ✅ Evento de visualização do produto
+        // ✅ Dispara ViewContent assim que a página carrega (com content_id)
         ttq.track('ViewContent', {
-          contents: [
-            {
-              content_id: "panelas-29pcs",
-              content_type: "product",
-              content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
-            }
-          ],
+          contents: [{
+            content_id: "panelas-29pcs",
+            content_type: "product",
+            content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
+          }],
           value: 109.90,
           currency: "BRL"
         });
 
-        // ✅ Captura clique no botão de compra e dispara InitiateCheckout
-        document.addEventListener("click", function (e) {
-          const el = e.target.closest("button, a");
-          if (!el) return;
-          const texto = el.textContent?.toLowerCase();
-          if (texto && (texto.includes("comprar") || texto.includes("checkout"))) {
-            ttq.track('InitiateCheckout', {
-              contents: [
-                {
-                  content_id: "panelas-29pcs",
-                  content_type: "product",
-                  content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
-                }
-              ],
-              value: 109.90,
-              currency: "BRL"
+        // ✅ Espera o site React montar o botão e adiciona o evento corretamente
+        document.addEventListener("DOMContentLoaded", function() {
+          setTimeout(() => {
+            const botoes = document.querySelectorAll("button, a");
+            botoes.forEach(btn => {
+              const texto = btn.textContent?.trim().toLowerCase();
+              if (texto && (texto.includes("comprar agora") || texto.includes("frete grátis"))) {
+                btn.addEventListener("click", function() {
+                  ttq.track('InitiateCheckout', {
+                    contents: [{
+                      content_id: "panelas-29pcs",
+                      content_type: "product",
+                      content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
+                    }],
+                    value: 109.90,
+                    currency: "BRL"
+                  });
+                });
+              }
             });
-          }
+          }, 2000); // ⏳ espera 2 segundos para garantir que o React já renderizou tudo
         });
       }(window, document, 'ttq');
     </script>
 
-    <!-- ✅ Script da UTMify opcional (mantém compatibilidade) -->
+    <!-- ✅ Script da UTMify (opcional) -->
     <script>
       window.tikTokPixelId = "D4937IBC77U3KF9L8BNG";
       var a = document.createElement("script");
