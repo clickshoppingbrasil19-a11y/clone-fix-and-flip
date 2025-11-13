@@ -17,7 +17,7 @@
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- ✅ TikTok Pixel Oficial -->
+    <!-- ✅ TikTok Pixel com InitiateCheckout -->
     <script>
       !function (w, d, t) {
         w.TiktokAnalyticsObject = t;
@@ -32,17 +32,15 @@
           }
         };
         for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-        ttq.instance = function (t) {
-          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
-            ttq.setAndDefer(e, ttq.methods[n]);
-          return e;
-        };
         ttq.load = function (e, n) {
-          var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
-              o = n && n.partner;
-          ttq._i = ttq._i || {}, ttq._i[e] = [],
-          ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date,
-          ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+          var r = "https://analytics.tiktok.com/i18n/pixel/events.js";
+          ttq._i = ttq._i || {};
+          ttq._i[e] = [];
+          ttq._i[e]._u = r;
+          ttq._t = ttq._t || {};
+          ttq._t[e] = +new Date;
+          ttq._o = ttq._o || {};
+          ttq._o[e] = n || {};
           n = document.createElement("script");
           n.type = "text/javascript";
           n.async = !0;
@@ -51,11 +49,10 @@
           e.parentNode.insertBefore(n, e);
         };
 
-        // ✅ Carrega o Pixel
         ttq.load('D4937IBC77U3KF9L8BNG');
         ttq.page();
 
-        // ✅ ViewContent (necessário para VSA)
+        // ✅ Evento de visualização do produto
         ttq.track('ViewContent', {
           contents: [
             {
@@ -68,32 +65,29 @@
           currency: "BRL"
         });
 
-        // ✅ InitiateCheckout (detecta clique no botão Comprar)
-        document.addEventListener("DOMContentLoaded", function() {
-          const buyButtons = document.querySelectorAll("button, a");
-          buyButtons.forEach(btn => {
-            btn.addEventListener("click", function() {
-              if (btn.textContent.toLowerCase().includes("comprar")) {
-                ttq.track('InitiateCheckout', {
-                  contents: [
-                    {
-                      content_id: "panelas-29pcs",
-                      content_type: "product",
-                      content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
-                    }
-                  ],
-                  value: 109.90,
-                  currency: "BRL"
-                });
-              }
+        // ✅ Captura clique no botão de compra e dispara InitiateCheckout
+        document.addEventListener("click", function (e) {
+          const el = e.target.closest("button, a");
+          if (!el) return;
+          const texto = el.textContent?.toLowerCase();
+          if (texto && (texto.includes("comprar") || texto.includes("checkout"))) {
+            ttq.track('InitiateCheckout', {
+              contents: [
+                {
+                  content_id: "panelas-29pcs",
+                  content_type: "product",
+                  content_name: "Conjunto de Panelas LIFE SMILE 29 Peças"
+                }
+              ],
+              value: 109.90,
+              currency: "BRL"
             });
-          });
+          }
         });
       }(window, document, 'ttq');
     </script>
-    <!-- ✅ Fim do Pixel Oficial -->
 
-    <!-- ✅ TikTok Pixel via UTMIFY -->
+    <!-- ✅ Script da UTMify opcional (mantém compatibilidade) -->
     <script>
       window.tikTokPixelId = "D4937IBC77U3KF9L8BNG";
       var a = document.createElement("script");
@@ -102,7 +96,6 @@
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
       document.head.appendChild(a);
     </script>
-    <!-- ✅ Fim do UTMIFY -->
   </head>
 
   <body>
